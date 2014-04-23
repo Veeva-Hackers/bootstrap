@@ -1,0 +1,47 @@
+---
+- name: install everything
+  hosts: all
+  sudo: true
+  tasks:
+    - name: install gunicorn
+      apt: pkg=gunicorn state=latest
+      notify:
+      - restart gunicorn
+
+    - name: install pip
+      apt: pkg=python-pip state=latest
+
+    - name: install django
+      pip: name=django
+
+    - name: install boto
+      pip: name=boto
+
+    - name: install django rest framework
+      pip: name=djangorestframework
+
+    - name: install markdown for django rest framework browsable API
+      pip: name=markdown
+
+    - name: install django-filter for django rest framework filtering support
+      pip: name=django-filter
+
+    - name: install django-storages
+      pip: name=django-storages
+
+    - name: django syncdb
+      django_manage: command=syncdb app_path=/vagrant/chordsing/django
+
+    - name: install supervisord
+      apt: pkg=supervisor
+
+    - name: copy over supervisor.conf
+      command: sudo cp /vagrant/chordsing/ops/chordsing.conf /etc/supervisor/conf.d/chordsing.conf
+
+    - name: use supervisord to start gunicorn
+      supervisorctl: name=chordsing state=present
+
+
+  handlers:
+    - name: restart gunicorn
+      supervisorctl: name=chordsing state=restarted
