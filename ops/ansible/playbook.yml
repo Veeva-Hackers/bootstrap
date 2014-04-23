@@ -30,18 +30,18 @@
       pip: name=django-storages
 
     - name: django syncdb
-      django_manage: command=syncdb app_path=/vagrant/chordsing/django
+      django_manage: command=syncdb app_path=/vagrant/django/hello_world
 
     - name: install supervisord
       apt: pkg=supervisor
 
     - name: copy over supervisor.conf
-      command: sudo cp /vagrant/chordsing/ops/chordsing.conf /etc/supervisor/conf.d/chordsing.conf
+      command: sudo cp /vagrant/ops/supervisord/helloworld.conf /etc/supervisor/conf.d/helloworld.conf
 
     - name: use supervisord to start gunicorn
-      supervisorctl: name=chordsing state=present
+      supervisorctl: name=helloworld state=present
 
 
   handlers:
     - name: restart gunicorn
-      supervisorctl: name=chordsing state=restarted
+      supervisorctl: name=helloworld state=restarted
