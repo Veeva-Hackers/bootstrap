@@ -1,0 +1,29 @@
+
+
+In order to put a Puppet module to use, you need to assign classes to Puppet nodes. This process is called "classification".
+
+Puppet Enterprise includes other tools to help administer your systems. "Facter" is the name of one of these tools. Facter is Puppet's cross-platform system profiling library. It discovers and reports per-node facts, which are available in your Puppet manifests as variables. Facter is also free.
+
+A "class" in Puppet is just a named block of Puppet code. Modules typically include a class of the same name (e.g., lvmguide).
+
+In this tutorial, Quests are broken up into Tasks. You can interact with the Quest Tool with the command "quest". The following quests are available:
+Manifest
+Welcome
+Resources
+Classes
+Forge
+Ordering
+Begin
+Conditionals
+Modules
+Power
+Variables
+
+Puppet > shell scripts, because you can manage config on hundreds of machines without having to write complicated scripts that are hard to comprehend and maintain. Puppet is idempotent, and lets you leverage lots of existing "modules" of configuration that other people have used before you.
+
+Puppet Enterprise tacks on a few additional things to Puppet.
+
+This Puppet tutorial has a "quest" system in both it and its sample VM. Pretty cool stuff.
+
+Local Puppet VM IP Address:
+10.0.0.17
