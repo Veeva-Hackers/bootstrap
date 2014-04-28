@@ -1,4 +1,19 @@
+(These are my notes on Puppet, in reverse chronological order.)
 
+View Installed Modules
+Always view installed Puppet Modules as a "tree," as follows:
+	"puppet module list --tree"
+
+Puppet Modules
+The "puppet module" tool is one of the most important tools in expanding your use of Puppet. The "puppet module" tool allows you to create, install, search (and so much more) for modules on the Forge. Common commands include:
+ - list			List installed modules.
+ - search		Search the Puppet Forge for a module.
+ - install 		Install a module from the Puppet Forge or a release archive.
+ - upgrade		Upgrade a puppet module.
+ - uninstall	Uninstall a puppet module.
+ - build		Build a module release package.
+ - changes		Show modified files of an installed module.
+ - generate		Generate boilerplate for a new module.
 
 Including a Class
 The "include" function declares a class, if it hasn't already been declared somewhere else. If a class has already been declared, "include" will notice that and do nothing.
