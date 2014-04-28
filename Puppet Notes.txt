@@ -1,5 +1,79 @@
 
 
+Class declarations
+One alternative to calling "include" to declare classes is to use a class declaration, where you omit the name of the class:
+class { 'apache':
+	default_vhost => false,
+}
+In the above example, we simply pull in the existing "apache" class from the "apache" module we downloaded from the Forge.
+If we had wanted to include the "apache" class with its default parameter settings, we could have just used the "include apache" syntax. Turns out that just like the "lvmguide" class, the "apache" class is defined to accept parameters. Since we wanted to set the "default_vhost" parameter, we used the resource-like class declaration syntax. This allows us to set "default_vhost" to "false".
+
+Class parameters
+You can specify a class to have parameters, like so:
+class lvmguide (
+	$document_root = '/var/www/html/lvmguide', 
+	$port = '80',
+) {
+	class { 'apache':
+		default_vhost => false,
+	}
+	apache::vhost { 'learning.puppetlabs.vm': 
+		port => $port,
+		docroot => $document_root,
+	}
+	file { '/var/www/html/lvmguide':
+		ensure => directory,
+		owner => $::apache::params::user,
+		group => $::apache::params::group,
+		source => 'puppet:///modules/lvmguide/html', recurse => true,
+		require => Class['apache'],
+	} 
+}
+People who declare this class can pass in whatever they like for $document_root and $port. The values defined in the class are the default values for when users of the class don't pass in an argument.
+
+Separating definitions from declarations
+NEVER put the "include" for your class in the same file that it's defined. *Always* separate the definition from the declaration.
+
+Declaring classes (class declarations)
+The simplest way to direct Puppet to apply a class definition on a system is by using the "include" directive. For example, to invoke the class "ntp" from the example below, you would have to say:
+include ntp
+in a Puppet manifest, and apply that manifest. Puppet will know *where* to find the definition for that class through the Module (which we'll learn about later).
+
+Class definitions
+When you first define a class, Puppet simply registers it as being defined. You still have to DECLARE the class in order to make changes and manage to the resources specified in the definition.
+
+Classes
+In Puppet's language "classes" are named blocks of Puppet code. Once you have defined a class, you can invoke it by name. A class DEFINITION looks as follows:
+class ntp {
+	case $operatingsystem {
+		centos, redhat: {
+			$service_name 	= 'ntpd'
+			$conf_file 		= 'ntp.conf.el'
+		}
+		debian, ubuntu: {
+			$service_name	= 'ntp'
+			$conf_file		= 'ntp.conf.debian'
+		}
+	}
+
+	package { 'ntp':
+		ensure => installed,
+	}
+	file { 'ntp.conf':
+		path	=> '/etc/ntp.conf',
+		ensure	=> file,
+		require => Package['ntp'],
+		source 	=> "/root/examples/answers/${conf_file}"
+	}
+	service { 'ntp':
+		name 		=> $service_name,
+		ensure		=> running,
+		enable		=> true,
+		subscribe 	=> File['ntp.conf'],
+	}
+}
+
+
 Package/File/Service
 This is the most common Puppet paradigm in use. Typically, you'll use Puppet to install a package, setup a config file for said package, and then ensure that a service is running for that particular package. The service should subscribe to changes in the config file. Here is a perfect example of Package/File/Service:
 package { 'openssh-server':
