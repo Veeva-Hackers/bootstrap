@@ -12,11 +12,17 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "hashicorp/precise32"
   config.vm.provision :puppet do |puppet|
-    puppet.manifests_path = "ops/puppet"
-    puppet.manifest_file = "default.pp"
+    puppet.manifests_path = "ops/puppet/manifests"
+    puppet.module_path = "ops/puppet/modules"
+    puppet.manifest_file = "init.pp"
   end
 
+  # Setup port forwarding.
   config.vm.network :forwarded_port, host: 8000, guest: 8000
+
+  # Squash that weird Vagrant bug, where they display
+  # "warning: Could not retrieve fact fqdn".
+  config.vm.hostname = "vagrant.example.com"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs

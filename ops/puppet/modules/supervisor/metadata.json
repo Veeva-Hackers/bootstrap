@@ -1,0 +1,38 @@
+{
+  "name": "guilhermef-supervisor",
+  "version": "0.0.5",
+  "source": "UNKNOWN",
+  "author": "Digg, Inc",
+  "license": "UNKNOWN",
+  "summary": "Supervisor module made by Digg, Inc",
+  "description": "Supervisor module made by Digg, Inc https://github.com/plathrop/puppet-module-supervisor . This module doesn't belong to me, I'm just publishing",
+  "project_page": "https://github.com/plathrop/puppet-module-supervisor",
+  "dependencies": [
+
+  ],
+  "types": [
+
+  ],
+  "checksums": {
+    "LICENSE": "61f5215636e79a196a2d5515fbe8ab29",
+    "Modulefile": "e7814817d147787598fbdd1641c9e1ec",
+    "README.rst": "be7625f9d0bfebf1a8773aee5f1aa5c0",
+    "debian/changelog": "135c55cee1866c56f78a0aec50d2a3c8",
+    "debian/compat": "1dcca23355272056f04fe8bf20edfce0",
+    "debian/control": "9ac6c6ff3d5afbb67ee48771779c8c06",
+    "debian/copyright": "5f1b395a3f4f8ca790da81ef23095aba",
+    "debian/dirs": "141adf205639fee3c0bcceb0aac1d489",
+    "debian/install": "67cddbfda6b719dcdffc9c954e16aa5e",
+    "debian/rules": "f872080ab50c131a560019612657819a",
+    "files/logrotate": "1ebbf5e2b3cc73ad22b7483d8d469a3d",
+    "files/supervisord.conf": "2292d44720d68fe69877e0a64604b1b2",
+    "manifests/init.pp": "6c5f16f21e10752b5237ab27bb3dfbb4",
+    "manifests/params.pp": "a63863e4c54c13ae69681352b6c6b18b",
+    "manifests/service.pp": "78439b1e32ac19c2f1d207df4629b1f2",
+    "manifests/update.pp": "24268fb05b18a16ff1b5e6679f34dd66",
+    "templates/service.ini.erb": "5a8bb3ae8e8f1c8ba007f0d38459743e",
+    "templates/supervisord.conf.erb": "58d72837a788276ebab5d095e585ca17",
+    "tests/init.pp": "2c6604842e6d96d58ac34068ac45f666",
+    "tests/service.pp": "2f4087d769ec9a0657d0d0b934f04dba"
+  }
+}
