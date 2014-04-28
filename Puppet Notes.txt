@@ -1,5 +1,56 @@
 
 
+Use "puppet describe" to have Puppet describe a Resource Type (e.g., "user").
+Use "puppet resource" to have Puppet describe a particular Resource (e.g., a user named "root").
+
+Puppet works by exposing to you a declarative DSL called the Puppet DSL, where you describe the desired state of your machine. How Puppet gets there is achieved through "providers." Puppet completely abstracts away the implementation of getting a system to your desired state through a set of these "providers". Puppet's providers are collectively referred to as the "Resource Abstraction Layer", or "RAL" for short.
+E.g., when you wish to install a package, you can stand back and watch Puppet figure out whether to use "yum" or "apt" for package management.
+
+A "Resource Title" names a Resource. In the example below:
+user { 'root':
+	ensure => 'present',
+	comment => 'root',
+	gid => '0',
+	home => '/root',
+	password => '$1$jrm5tnjw$h8JJ9mCZLmJvIxvDLjw1M/', 
+	password_max_age => '99999',
+	password_min_age => '0',
+	shell => '/bin/bash',
+	uid => '0',
+}
+the word "'root'" is the Resource Title. The title of a resource is used to identify it and MUST be unique.
+
+Some of the core resource types you'll encounter include:
+ user 		- A user
+ group		- A user group
+ file		- A specific file
+ package	- A software package
+ service	- A running service
+ cron 		- A scheduled cron job
+ exec 		- An external command
+ host		- A host entry
+
+A "Resource Type" defines a Resource. They are written *before* the curly braces. E.g., in the following example:
+user { 'root':
+	ensure => 'present',
+	comment => 'root',
+	gid => '0',
+	home => '/root',
+	password => '$1$jrm5tnjw$h8JJ9mCZLmJvIxvDLjw1M/', 
+	password_max_age => '99999',
+	password_min_age => '0',
+	shell => '/bin/bash',
+	uid => '0',
+}
+the word "user" is the Resource Type.
+
+
+Puppet's declarative programming language is called the "Puppet DSL".
+
+The block of Puppet code that describes a resource is called a "resource declaration".
+
+"Resources" are the fundamental units for modeling system configurations. Each resource describes some aspect of a asystem, like a service that must be running or a package that must be installed.
+
 In order to put a Puppet module to use, you need to assign classes to Puppet nodes. This process is called "classification".
 
 Puppet Enterprise includes other tools to help administer your systems. "Facter" is the name of one of these tools. Facter is Puppet's cross-platform system profiling library. It discovers and reports per-node facts, which are available in your Puppet manifests as variables. Facter is also free.
