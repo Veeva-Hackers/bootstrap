@@ -1,5 +1,18 @@
 
 
+Including a Class
+The "include" function declares a class, if it hasn't already been declared somewhere else. If a class has already been declared, "include" will notice that and do nothing.
+
+Viewing a Module's structure ("tree")
+Use the "tree" command to take a look at the basic directory structure of the module:
+"tree -L 2 -d /etc/puppetlabs/puppet/modules"
+
+Modules
+If "resources" and "classes" are the atoms and molecules of Puppet, we might consider "modules" our amoebas: the first self-contained organisms of the Puppet world.
+Until now, we've been writing one-off manifests to demonstrate individual Puppet topics, but in actual practice, every manifest should be contained within a module.
+When you ask Puppet to, say, "include ssh" on a particular node, how does Puppet know *where* to find the definition for the class? The answer is, we agree to put the class definitions in a standard location on the file system, by placing the manifest containing the class definition in a specific directory in a module.
+Simply put: a Module is a directory with a specific structure -- a means for us to package everything needed to achieve a certain goal.
+
 Class declarations
 One alternative to calling "include" to declare classes is to use a class declaration, where you omit the name of the class:
 class { 'apache':
