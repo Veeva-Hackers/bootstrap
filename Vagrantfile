@@ -11,8 +11,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "hashicorp/precise32"
-  config.vm.provision :ansible do |ansible|
-    ansible.playbook = "ops/ansible/playbook.yml"
+  config.vm.provision :puppet do |puppet|
+    puppet.manifests_path = "ops/puppet"
+    puppet.manifest_file = "default.pp"
   end
 
   config.vm.network :forwarded_port, host: 8000, guest: 8000
