@@ -34,5 +34,13 @@ supervisor::service {
         #require     => Class['config'];
 }
 
+package { 'dos2unix':
+    ensure => present,
+}
 
+exec { 'dos2unix':
+    command => "dos2unix ${project_root}ops/bash/start_gunicorn.sh",
+    path => "/usr/bin/",
+    require => Package['dos2unix'],
+}
 
