@@ -18,7 +18,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   # Setup port forwarding.
-  config.vm.network :forwarded_port, host: 8000, guest: 8000
+  config.vm.network :forwarded_port, host: 4567, guest: 8000
 
   # Squash that weird Vagrant bug, where they display
   # "warning: Could not retrieve fact fqdn".
