@@ -19,6 +19,19 @@ START CUSTOM STYLING
 .list-group-item .vv_result_tile .vv_restaurant_Rating_good {
     color: green;
 }
+.list-group-item .vv_result_tile .vv_restaurant_Rating_okay {
+    color: yellow;
+}
+.list-group-item .vv_result_tile .vv_restaurant_Rating_bad {
+    color: red;
+}
+.list-group-item .vv_result_tile .vv_restaurant_yelp_rating {
+    color: yellow;
+}
+.list-group-item .vv_result_tile .vv_restaurant_name {
+    font-size: 16px;
+    font-weight: bold;
+}
 /**************************************
 END CUSTOM STYLING
 **************************************/
