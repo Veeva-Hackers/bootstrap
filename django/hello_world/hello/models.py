@@ -19,7 +19,7 @@ class Restaurant(models.Model):
     location_1 = models.OneToOneField(Address, null=True)
 
 class Violation(models.Model):
-    restaurant = models.ForeignKey(Restaurant)
+    restaurant = models.ForeignKey(Restaurant, related_name='violations')
     resource_code = models.CharField(max_length=100)
     activity_date = models.DateTimeField()
     violation_description = models.CharField(max_length=1000)
