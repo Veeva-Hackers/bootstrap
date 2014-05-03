@@ -5,3 +5,6 @@ def home(request):
     return render_to_response('index.html', {
         'girum': 'ibssa'
     })
+
+def search(request):
+    return None
