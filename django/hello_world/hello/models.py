@@ -12,8 +12,9 @@ class Address(models.Model):
     zip = models.CharField(max_length=10)
 
 class Restaurant(models.Model):
+    id = models.AutoField(primary_key=True)
     human_address = models.CharField(max_length=300)
-    facility_name = models.CharField(max_length=300, primary_key=True)
+    facility_name = models.CharField(max_length=300, unique=True)
     longitude = models.DecimalField(max_digits=11, decimal_places=8)
     latitude = models.DecimalField(max_digits=11, decimal_places=8)
     location_1 = models.OneToOneField(Address, null=True)
@@ -29,25 +30,32 @@ def load():
     restaurant_json_array = json.loads(open(restaurant_json_path).read())
 
     for restaurantJson in restaurant_json_array:
-        restaurant = Restaurant()
-        restaurant.facility_name = restaurantJson['facility_name']
 
-        if 'location_1' in restaurantJson:
-            location_json = restaurantJson['location_1']
-            restaurant.longitude = location_json['longitude']
-            restaurant.latitude = location_json['latitude']
-            restaurant.human_address = location_json['human_address']
+        facility_name = restaurantJson['facility_name']
 
-            address_json = json.loads(restaurant.human_address)
+        restaurant = None
+        if not Restaurant.objects.filter(facility_name=facility_name).count():
+            restaurant = Restaurant()
+            restaurant.facility_name = facility_name
 
-            address = Address()
-            address.address = address_json['address']
-            address.city = address_json['city']
-            address.state = address_json['state']
-            address.zip = address_json['zip']
-            address.save()
+            if 'location_1' in restaurantJson:
+                location_json = restaurantJson['location_1']
+                restaurant.longitude = location_json['longitude']
+                restaurant.latitude = location_json['latitude']
+                restaurant.human_address = location_json['human_address']
 
-            restaurant.location_1 = address
+                address_json = json.loads(restaurant.human_address)
+
+                address = Address()
+                address.address = address_json['address']
+                address.city = address_json['city']
+                address.state = address_json['state']
+                address.zip = address_json['zip']
+                address.save()
+
+                restaurant.location_1 = address
+        else:
+            restaurant = Restaurant.objects.get(facility_name=facility_name)
 
         restaurant.save()
 
