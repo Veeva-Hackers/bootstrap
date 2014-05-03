@@ -13,5 +13,5 @@ def search(request):
     return None
 
 def initializeDB(request):
-    models.parseFromFlatFile()
+    models.load()
     return HttpResponse("Initialized")
