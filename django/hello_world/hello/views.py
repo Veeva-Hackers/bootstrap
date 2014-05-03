@@ -2,7 +2,7 @@ from django.shortcuts import render_to_response
 from django.http import HttpResponse
 from yelpapi.yelpapi import YelpAPI
 import json
-import oauth2
+# import oauth2
 from rest_framework import viewsets, serializers
 from rest_framework.renderers import JSONRenderer
 
@@ -18,8 +18,8 @@ def home(request):
 def search_yelp(request):
 
 # Sign the URL
-    consumer = oauth2.Consumer('iuNELsk9FWsJUHb-LdFx_A', 'THc0I88ppFD45fjK_fGnXEhaGKs')
-    oauth_request = oauth2.Request('GET', 'http://api.yelp.com/v2/search', {})
+#     consumer = oauth2.Consumer('iuNELsk9FWsJUHb-LdFx_A', 'THc0I88ppFD45fjK_fGnXEhaGKs')
+#     oauth_request = oauth2.Request('GET', 'http://api.yelp.com/v2/search', {})
   # oauth_request.update({'oauth_nonce': oauth2.generate_nonce(),
   #                       'oauth_timestamp': oauth2.generate_timestamp(),
   #                       'oauth_token': token,
