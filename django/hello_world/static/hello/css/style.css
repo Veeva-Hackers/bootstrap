@@ -19,8 +19,6 @@ START CUSTOM STYLING
 .list-group-item .vv_result_tile .vv_restaurant_Rating_good {
     color: green;
 }
-
-
 /**************************************
 END CUSTOM STYLING
 **************************************/
@@ -1200,7 +1198,7 @@ img.alignleft + p, img.alignright + p {
 #header-title h1 {
     font-family: 'Abel', sans-serif;
     text-transform: lowercase;
-    word-spacing: 0px;
+    word-spacing: -10px;
     margin: 20px 0 10px 0;
     font-size: 3.2em;
     color: #fff
