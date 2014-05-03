@@ -16,12 +16,10 @@ def parseFromFlatFile():
     restaurantJsonPath = os.path.join(settings.BASE_DIR, 'static/restaurantinspect.json')
     restaurantJsonArray = json.loads(open(restaurantJsonPath).read())
 
-    print "running"
     restaurants = []
     for restaurantJson in restaurantJsonArray:
         restaurant = Restaurant()
         restaurants.append(restaurant)
-        print restaurantJson
     return restaurants
 
 def load():
