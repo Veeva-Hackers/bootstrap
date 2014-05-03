@@ -1,6 +1,8 @@
 from django.shortcuts import render_to_response
 from django.http import HttpResponse
 from yelpapi.yelpapi import YelpAPI
+import json
+import oauth2
 from rest_framework import viewsets, serializers
 from rest_framework.renderers import JSONRenderer
 
@@ -14,14 +16,23 @@ def home(request):
 
 
 def search_yelp(request):
-    yelp_api = YelpAPI(consumer_key='iuNELsk9FWsJUHb-LdFx_A',
-                       consumer_secret='THc0I88ppFD45fjK_fGnXEhaGKs',
-                       token='jv8hIDODrf8kHAIalsFdgaJKSvo86E0U',
-                       token_secret='_zQuQVlWTn_tzfnw_uhAWbQJJIs')
 
+# Sign the URL
+    consumer = oauth2.Consumer('iuNELsk9FWsJUHb-LdFx_A', 'THc0I88ppFD45fjK_fGnXEhaGKs')
+    oauth_request = oauth2.Request('GET', 'http://api.yelp.com/v2/search', {})
+  # oauth_request.update({'oauth_nonce': oauth2.generate_nonce(),
+  #                       'oauth_timestamp': oauth2.generate_timestamp(),
+  #                       'oauth_token': token,
+  #                       'oauth_consumer_key': consumer_key})
 
-
-    search_results = yelp_api.search_query(radius_filter='5', term='restaurants', limit=25)
+    # yelp_api = YelpAPI(consumer_key='iuNELsk9FWsJUHb-LdFx_A',
+    #                    consumer_secret='THc0I88ppFD45fjK_fGnXEhaGKs',
+    #                    token='jv8hIDODrf8kHAIalsFdgaJKSvo86E0U',
+    #                    token_secret='_zQuQVlWTn_tzfnw_uhAWbQJJIs')
+    #
+    #
+    #
+    # search_results = yelp_api.search_query(term='ice cream', location='austin, tx', sort=2, limit=25)
 
     # for business in search_results.businesses:
     #     name = business.name
@@ -31,7 +42,7 @@ def search_yelp(request):
     #     print 'name: ', name
 
     return render_to_response('portfolio.html', {
-        'results': search_results
+        # 'results': search_results
     })
 
 
@@ -66,3 +77,7 @@ class ViolationViewSet(viewsets.ModelViewSet):
 class RestaurantViewSet(viewsets.ModelViewSet):
     model = Restaurant
     serializer_class = RestaurantSerializer
+
+
+def get_facility(request, facility_name):
+    return render_to_response('portfolio_item.html')
