@@ -73,7 +73,7 @@ class RestaurantSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Restaurant
-        fields = ('facility_name', 'human_address', 'violations', 'location_1')
+        fields = ('id', 'facility_name', 'human_address', 'violations', 'location_1')
 
 class ViolationViewSet(viewsets.ModelViewSet):
     model = Violation
@@ -87,5 +87,7 @@ class RestaurantViewSet(viewsets.ModelViewSet):
 
 
 def get_facility(request, primary_key):
-    restaurant = models.Restaurant.objects.filter(id=primary_key)
-    return render_to_response('portfolio_item.html')
+    restaurant = models.Restaurant.objects.get(id=primary_key)
+    return render_to_response('portfolio_item.html', {
+        'restaurant': restaurant
+    })
