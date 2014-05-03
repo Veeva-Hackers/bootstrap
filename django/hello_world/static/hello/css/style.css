@@ -16,6 +16,10 @@ START CUSTOM STYLING
 .list-group-item .vv_result_tile{
     min-height: 60px;
 }
+.list-group-item .vv_result_tile_small{
+    min-height: 30px;
+}
+.list-group-item .vv_result_tile .vv_restaurant_Rating_good {
 .vv_restaurant_Rating_good {
     color: green;
 }
