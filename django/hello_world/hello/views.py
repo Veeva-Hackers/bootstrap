@@ -1,10 +1,11 @@
 from django.shortcuts import render_to_response
 from django.http import HttpResponse
 from yelpapi.yelpapi import YelpAPI
+import json
 
 from hello import models
 
-# Create your views here.
+
 def home(request):
     return render_to_response('index.html', {
         'hello': 'world'
@@ -28,7 +29,9 @@ def search_yelp(request):
     })
 
 def search_restaurant_name(request):
-    return HttpResponse('{}')
+    matching_restaurants = models.Restaurant.objects.all()
+    output = json.dumps(matching_restaurants)
+    return HttpResponse(output)
 
 def initialize_db(request):
     models.load()
