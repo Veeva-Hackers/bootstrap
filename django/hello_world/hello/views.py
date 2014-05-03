@@ -1,7 +1,7 @@
 from django.shortcuts import render, render_to_response
 from hello import models
-
 from django.http import HttpResponse
+import yelp
 
 # Create your views here.
 def home(request):
@@ -10,6 +10,9 @@ def home(request):
     })
 
 def search(request):
+    
+    yelp =
+    
     return None
 
 def initializeDB(request):
