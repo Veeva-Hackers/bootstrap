@@ -11,7 +11,7 @@ def home(request):
     })
 
 
-def search(request):
+def search_yelp(request):
     yelp_api = YelpAPI(consumer_key='iuNELsk9FWsJUHb-LdFx_A', consumer_secret='THc0I88ppFD45fjK_fGnXEhaGKs', token='jv8hIDODrf8kHAIalsFdgaJKSvo86E0U',
                        token_secret='_zQuQVlWTn_tzfnw_uhAWbQJJIs')
     search_results = yelp_api.search_query(radius_filter='5', term = 'restaurants', limit = 25)
@@ -26,8 +26,7 @@ def search(request):
     return render_to_response('portfolio.html', {
         'results': search_results
     })
-    return None
 
-def initializeDB(request):
+def initialize_db(request):
     models.load()
     return HttpResponse("Initialized")
