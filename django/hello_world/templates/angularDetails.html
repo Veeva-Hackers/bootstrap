@@ -1,4 +1,3 @@
-{%verbatim%}
 <div class="boxed animated fadeIn animation-delay-5" ng-controller="detailsController">
 
         <div class="container">
@@ -37,7 +36,7 @@
                             <div class="panel-heading">
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="collapsed">
-                                        Violations
+                                        Inspections
                                     </a>
                                 </h4>
                             </div>
@@ -45,30 +44,35 @@
                                 <table class="panel-body" style="width:100%">
                                     <thead>
                                         <tr>
-                                            <th>Violation</th>
+                                            <th>Inspection Type</th>
                                             <th>Date</th>
                                             <th>Rating</th>
                                         </tr>
                                     </thead>
                                     <tbody style="border:solid 1px #00708c ">
+                                        {% for violation in violations %}
                                         <tr>
-                                            <td>Clean Kitchen</td>
-                                            <td>Jan 1 2000</td>
+                                            <td>{{violation.violation_description}}</td>
+                                            <td>{{violation.activity_date}}</td>
                                             <td>
+                                                {% if violation.resource_code == "G"%}
                                                 <div class="vv_restaurant_Rating_good">
                                                     <i class="fa fa-circle"></i>
                                                 </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Sufficient Supplies</td>
-                                            <td>Jan 1 2000</td>
-                                            <td>
-                                                <div class="vv_restaurant_Rating_good">
+                                                {% endif %}
+                                                {% if violation.resource_code == "Y"%}
+                                                <div class="vv_restaurant_Rating_okay">
                                                     <i class="fa fa-circle"></i>
                                                 </div>
+                                                {% endif %}
+                                                {% if violation.resource_code == "R"%}
+                                                <div class="vv_restaurant_Rating_bad">
+                                                    <i class="fa fa-circle"></i>
+                                                </div>
+                                                {% endif %}
                                             </td>
                                         </tr>
+                                        {% endfor %}
                                     </tbody>
                                 </table>
                             </div>
@@ -84,4 +88,3 @@
         </div> <!-- container  -->
 
 </div> <!-- boxed -->
-{% endverbatim %}
