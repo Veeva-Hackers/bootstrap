@@ -54,7 +54,6 @@ def search_restaurant_name(request):
     serializer = RestaurantSerializer(matching_restaurants)
     return HttpResponse(JSONRenderer().render(serializer.data))
 
-
 def initialize_db(request):
     models.load()
     return HttpResponse("Initialized")
@@ -88,5 +87,6 @@ class RestaurantViewSet(viewsets.ModelViewSet):
     serializer_class = RestaurantSerializer
 
 
-def get_facility(request, facility_name):
+def get_facility(request, primary_key):
+    restaurant = models.Restaurant.objects.filter(id=primary_key)
     return render_to_response('portfolio_item.html')

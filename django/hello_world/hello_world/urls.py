@@ -20,7 +20,7 @@ urlpatterns = patterns('',
     url(r'^search/$', 'hello.views.search_yelp', name='search_yelp'),
     url(r'^searchrestaurant/$', 'hello.views.search_restaurant_name', name='search_restaurant_name'),
     url(r'^init/', 'hello.views.initialize_db', name='initialize_db'),
-    url(r'^restaurants/(?P<facility_name>\w+)/$', 'hello.views.get_facility', name='get_facility'),
+    url(r'^restaurants/(?P<primary_key>\w+)/$', 'hello.views.get_facility', name='get_facility'),
 )
 
 urlpatterns += staticfiles_urlpatterns()

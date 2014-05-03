@@ -12,8 +12,9 @@ class Address(models.Model):
     zip = models.CharField(max_length=10)
 
 class Restaurant(models.Model):
+    id = models.AutoField()
     human_address = models.CharField(max_length=300)
-    facility_name = models.CharField(max_length=300, primary_key=True)
+    facility_name = models.CharField(max_length=300, unique=True)
     longitude = models.DecimalField(max_digits=11, decimal_places=8)
     latitude = models.DecimalField(max_digits=11, decimal_places=8)
     location_1 = models.OneToOneField(Address, null=True)
