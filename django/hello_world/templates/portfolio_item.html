@@ -29,31 +29,50 @@
 
 <body>
 
-    <div class="boxed animated fadeIn animation-delay-5">
-
-        <header class="wrap-title">
-            <div class="container">
-                <h1 class="page-title">Portfolio Item</h1>
-
-                <ol class="breadcrumb hidden-xs">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li class="active">Portfolio Item</li>
-                </ol>
+    <header id="header" class="hidden-xs">
+        <div class="container">
+            <div id="header-title">
+                <h1 class="animated fadeInDown"><a href="index.html">Alameda<span>Food Safety</span></a></h1>
             </div>
-        </header>
+        </div> <!-- container -->
+    </header> <!-- header -->
+
+    <nav class="navbar navbar-static-top navbar-mind" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand visible-xs" href="index.html">Alameda <span>Food Safety</span></a>
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-mind-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <i class="fa fa-bars fa-inverse"></i>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-mind-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/search">Search</a>
+                    </li>
+                    <li>
+                        <a href="portfolio.html">Placeholder</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="boxed animated fadeIn animation-delay-5">
           
         <div class="container">
-            <div class="row">
+            <div class="row" style="margin-top:1em">
                 <div class="col-md-6">
-                    <h3 class="section-title">Detail Page</h3>
+                    <h3 class="section-title">Chipotle</h3>
                     <ul class="list-group">
-                        <li class="list-group-item">
-                            <div class="vv_result_tile_small">
-                                <div class="vv_left_column">Restaurant</div>
-                                <div class="vv_right_column">Chipotle</div>
-                            </div>
-                        </li>
                         <li class="list-group-item">
                             <div class="vv_result_tile_small">
                                 <div class="vv_left_column">Rating</div>
@@ -80,7 +99,7 @@
                         </li>
                     </ul> <!--list-group -->
                     <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="panel-group" id="accordion">
+                    <div class="panel-group" id="accordion" style="margin-bottom:1em">
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
@@ -94,25 +113,30 @@
                                     <thead>
                                         <tr>
                                             <th>Violation</th>
+                                            <th>Date</th>
                                             <th>Rating</th>
                                         </tr>
                                     </thead>
-                                    <tr>
-                                        <td>Clean Kitchen</td>
-                                        <td>
-                                            <div class="vv_restaurant_Rating_good">
-                                                <i class="fa fa-circle"></i>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Sufficient Supplies</td>
-                                        <td>
-                                            <div class="vv_restaurant_Rating_good">
-                                                <i class="fa fa-circle"></i>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                    <tbody style="border:solid 1px #00708c ">
+                                        <tr>
+                                            <td>Clean Kitchen</td>
+                                            <td>Jan 1 2000</td>
+                                            <td>
+                                                <div class="vv_restaurant_Rating_good">
+                                                    <i class="fa fa-circle"></i>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sufficient Supplies</td>
+                                            <td>Jan 1 2000</td>
+                                            <td>
+                                                <div class="vv_restaurant_Rating_good">
+                                                    <i class="fa fa-circle"></i>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
