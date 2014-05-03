@@ -27,6 +27,9 @@ def search_yelp(request):
         'results': search_results
     })
 
+def search_restaurant_name(request):
+    return HttpResponse('{}')
+
 def initialize_db(request):
     models.load()
     return HttpResponse("Initialized")
