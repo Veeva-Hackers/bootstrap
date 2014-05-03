@@ -16,14 +16,13 @@ def home(request):
 def search(request):
     yelp_api = YelpAPI(consumer_key='blah', consumer_secret='blah', token='blah',
                        token_secret='blah')
-    search_results = yelp_api.search_query('args here')
+    # search_results = yelp_api.search_query('blah')
 
-    business_results = yelp_api.business_query(id='blah')
+    # business_results = yelp_api.business_query(id='blah')
 
     return render_to_response('portfolio.html', {
         'hello': 'world'
     })
-    return None
 
 def initializeDB(request):
     models.load()
