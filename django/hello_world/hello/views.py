@@ -30,7 +30,9 @@ def search_yelp(request):
     })
 
 def search_restaurant_name(request):
-    matching_restaurants = [models.Restaurant.objects.all()[0]]
+    q = '1'
+    q = q.upper()
+    matching_restaurants = models.Restaurant.objects.filter(facility_name__istartswith=q)
 
     serializer = RestaurantSerializer(matching_restaurants)
     return HttpResponse(JSONRenderer().render(serializer.data))
