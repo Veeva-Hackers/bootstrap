@@ -1,0 +1,26 @@
+{% verbatim %}
+<ul class="list-group">
+    <li ng-repeat="restaurant in restaurants" class="list-group-item">
+        <div class="vv_result_tile">
+            <div class="vv_left_column">
+                <div class="vv_restaurant_name">{{restaurant.name}}</div>
+                <div class="vv_restaurant_yelp_rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <div class="vv_restaurant_location">123 Fake St</div>
+            </div>
+            <div class="vv_right_column">
+                <div class="vv_restaurant_Rating_good">
+                    <i class="fa fa-circle"></i>
+                </div>
+                <div class="vv_restaurant_cost">
+                    <i class="fa fa-usd"></i>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
+{% endverbatim %}

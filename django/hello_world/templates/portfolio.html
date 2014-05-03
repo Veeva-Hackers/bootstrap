@@ -21,12 +21,10 @@
     <link href="../static/hello/css/width-full.css" rel="stylesheet" media="screen" title="default">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="../../static/hello/js/html5shiv.js"></script>
-    <script src="../../static/hello/js/respond.min.js"></script>
-    <script src="../../static/vendor/angular/angular.js"></script>
-    <script src="../../static/hello/js/controllers.js"></script>
-    <![endif]-->
+    <script src="../static/hello/js/html5shiv.js"></script>
+    <script src="../static/hello/js/respond.min.js"></script>
+    <script src="../static/vendor/angular/angular.min.js"></script>
+    <script src="../static/hello/js/controller.js"></script>
 </head>
 
 
@@ -99,64 +97,7 @@
                <!--<li class="filter" data-filter="4">Windows App</li>-->
            <!--</ul>-->
 
-           <ul class="list-group">
-                <li ng-repeat="restaurant in restaurants" class="list-group-item">
-                    <div class="vv_result_tile">
-                        <div class="vv_left_column">
-                            <div class="vv_restaurant_name">{{restaurant.name}}</div>
-                            <div class="vv_restaurant_yelp_rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-half-o"></i>
-                            </div>
-                            <div class="vv_restaurant_location">123 Fake St</div>
-                        </div>
-                        <div class="vv_right_column">
-                            <div class="vv_restaurant_Rating_good">
-                                <i class="fa fa-circle"></i>
-                            </div>
-                            <div class="vv_restaurant_cost">
-                                <i class="fa fa-usd"></i>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item">
-                    <div class="vv_result_tile">
-                        <div class="vv_left_column">
-                            <div class="vv_restaurant_name">The Habit</div>
-                            <div class="vv_restaurant_yelp_rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-half-o"></i>
-                            </div>
-                            <div class="vv_restaurant_location">123 Fake St</div>
-                        </div>
-                        <div class="vv_right_column">
-                            <div class="vv_restaurant_Rating_good">
-                                <i class="fa fa-circle"></i>
-                            </div>
-                            <div class="vv_restaurant_cost">
-                                <i class="fa fa-usd"></i>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item">
-                    <span class="badge">194</span>
-                    Morbi leo risus
-                </li>
-                <li class="list-group-item">
-                    <span class="badge">4</span>
-                    Porta ac consectetur ac
-                </li>
-                <li class="list-group-item">
-                    <span class="badge">54</span>
-                    Vestibulum at eros
-                </li>
-            </ul>
+           {% include "angularResultList.html" %}
         </div> <!-- container  -->
     </div> <!-- boxed -->
 
