@@ -2,7 +2,7 @@ from django.shortcuts import render_to_response
 from django.http import HttpResponse
 from yelpapi.yelpapi import YelpAPI
 import json
-# import oauth2
+import oauth2
 from rest_framework import viewsets, serializers
 from rest_framework.renderers import JSONRenderer
 
