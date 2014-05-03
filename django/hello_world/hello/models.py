@@ -13,8 +13,16 @@ class Restaurant(models.Model):
     violation_description = models.CharField(max_length=1000)
 
 def parseFromFlatFile():
-    with io.open(os.path.join(settings.BASE_DIR, 'static/restaurantinspect.json'), 'r') as file:
-        print file
+    restaurantJsonPath = os.path.join(settings.BASE_DIR, 'static/restaurantinspect.json')
+    restaurantJsonArray = json.loads(open(restaurantJsonPath).read())
+
+    print "running"
+    restaurants = []
+    for restaurantJson in restaurantJsonArray:
+        restaurant = Restaurant()
+        restaurants.append(restaurant)
+        print restaurantJson
+    return restaurants
 
 def load():
     for restaurant in []:
