@@ -8,24 +8,25 @@
     <title>Open Mind</title>
 
     <!-- CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="css/font-awesome.min.css" rel="stylesheet" media="screen">
-    <link href="css/animate.min.css" rel="stylesheet" media="screen">
-    <link href="css/lightbox.css" rel="stylesheet" media="screen">
-    <link href="css/syntax/shCore.css" rel="stylesheet"  media="screen">
-    <link href="css/syntax/shThemeDefault.css" rel="stylesheet"  media="screen">
+    <link href="../static/hello/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="../static/hello/css/font-awesome.min.css" rel="stylesheet" media="screen">
+    <link href="../static/hello/css/animate.min.css" rel="stylesheet" media="screen">
+    <link href="../static/hello/css/lightbox.css" rel="stylesheet" media="screen">
+    <link href="../static/hello/css/syntax/shCore.css" rel="stylesheet"  media="screen">
+    <link href="../static/hello/css/syntax/shThemeDefault.css" rel="stylesheet"  media="screen">
 
     
-    <link href="css/style.css" rel="stylesheet" media="screen" title="default">
-    <link href="css/color-default.css" rel="stylesheet" media="screen" title="default">
-    <link href="css/width-full.css" rel="stylesheet" media="screen" title="default">
+    <link href="../static/hello/css/style.css" rel="stylesheet" media="screen" title="default">
+    <link href="../static/hello/css/color-default.css" rel="stylesheet" media="screen" title="default">
+    <link href="../static/hello/css/width-full.css" rel="stylesheet" media="screen" title="default">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-        <script src="js/html5shiv.js"></script>
-        <script src="js/respond.min.js"></script>
+    <script src="../../static/hello/js/html5shiv.js"></script>
+    <script src="../../static/hello/js/respond.min.js"></script>
     <![endif]-->
 </head>
+
 
 <body>
 
@@ -127,7 +128,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="about.html">About us</a></li>
                                 <li><a href="team.html">Our Team</a></li>
-                                <li class="active"><a href="services.html">Services</a></li>
+                                <li><a href="services.html">Services</a></li>
                                 <li><a href="pricing.html">Pricing</a></li>
                                 
                                 <li><a href="faq.html">FAQ</a></li>
@@ -135,7 +136,7 @@
                                 <li><a href="coming2.html">Coming Soon Option 2</a></li>
                                 <li><a href="timeline.html">Timeline</a></li>
                                 <li><a href="404.html">Error 404</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li class="active"><a href="contact.html">Contact</a></li>
                                 <li><a href="full.html">Full Page</a></li>
                                 <li class="dropdown-header">User Pages</li>
                                 <li><a href="register.html">Register</a></li>
@@ -194,7 +195,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">User name</a>
                             <div class="dropdown-menu dropdown-profile animated fadeInUp">
-                                <img src="img/avatar.jpg" class="imageborder alignleft" alt="image"> 
+                                <img src="../static/hello/img/avatar.jpg" class="imageborder alignleft" alt="image">
                                 <h4>Administrator</h4>
                                 admin@openmind.com<br>
                                 <a href="profile.html">Profile</a> | <a href="#">Logout</a>
@@ -208,83 +209,74 @@
 
         <header class="wrap-title">
             <div class="container">
-                <h1 class="page-title">Services</h1>
+                <h1 class="page-title">Contact Page</h1>
 
                 <ol class="breadcrumb hidden-xs">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Pages</a></li>
-                    <li class="active">Services</li>
+                    <li class="active">Contact</li>
                 </ol>
             </div>
         </header>
 
     <div class="container">
-        <section class="services">
-            <div class="row">
-                <div class="col-xs-12">
-                    <section class="text-center">
-                        <p class="lead lead-lg">Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit. <strong>Quaeso</strong> liberos <strong>aliquando</strong> illustribus maximasque tollit divelli.</p>
-                        <a href="#" class="btn btn-lg btn-primary">Live Preview</a>
-                        <a href="#" class="btn btn-lg btn-success">Purchase Now</a>
-                    </section>
-                </div>
-            </div> <!-- row -->
-            <div class="row">
-                <section class="service-item">
-                    <div class="col-md-6">
-                        <h2>Consectetur adipisicing elit</h2>
-                        <p>Lorem ipsum Dolor id ut dolor cupidatat in aliqua ad laborum commodo aliquip in ut aliqua pariatur ea sit pariatur veniam do. Lorem ipsum In quis ut qui ea sed id id anim enim veniam ullamco irure velit ut cillum.</p>
-                        <p>Lorem ipsum Magna aliqua id fugiat Duis veniam sit ad ut incididunt labore magna labore eu in dolor fugiat sunt deserunt sint eiusmod magna veniam. Lorem ipsum Ad enim occaecat minim occaecat.</p>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="service-item-icon hidden-xs text-center">
-                            <i class="fa fa-15x fa-book"></i>
+
+        <div class="row">
+            <div class="col-md-8">
+                <section>
+                    <h2 class="section-title">Send Message</h2>
+
+                    <p>Lorem ipsum Ex aliqua tempor nisi laboris dolor id laborum irure minim tempor in sit dolore amet sit esse nostrud tempor nulla consequat aute in nostrud laboris sint ullamco amet nisi pariatur officia nulla pariatur in id et labore dolore ad sit.</p>
+
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="InputName">Name</label>
+                            <input type="email" class="form-control" id="InputName">
                         </div>
-                    </div>
-                </section> <!-- service-item -->
-            </div> <!-- row -->
-            <div class="row">
-                <section class="service-item">
-                    <div class="col-md-6 col-md-push-6">
-                        <h2>Consectetur adipisicing elit</h2>
-                        <p>Lorem ipsum Dolor id ut dolor cupidatat in aliqua ad laborum commodo aliquip in ut aliqua pariatur ea sit pariatur veniam do. Lorem ipsum In quis ut qui ea sed id id anim enim veniam ullamco irure velit ut cillum.</p>
-                        <p>Lorem ipsum Magna aliqua id fugiat Duis veniam sit ad ut incididunt labore magna labore eu in dolor fugiat sunt deserunt sint eiusmod magna veniam. Lorem ipsum Ad enim occaecat minim occaecat.</p>
-                    </div>
-                    <div class="col-md-6 col-md-pull-6">
-                        <div class="service-item-icon hidden-xs text-center">
-                            <i class="fa fa-15x fa-picture-o"></i>
+                        <div class="form-group">
+                            <label for="InputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="InputEmail1">
                         </div>
-                    </div>
-                </section> <!-- service-item -->
-            </div> <!-- row -->
-            <div class="row">
-                <section class="service-item">
-                    <div class="col-md-6">
-                        <h2>Consectetur adipisicing elit</h2>
-                        <p>Lorem ipsum Dolor id ut dolor cupidatat in aliqua ad laborum commodo aliquip in ut aliqua pariatur ea sit pariatur veniam do. Lorem ipsum In quis ut qui ea sed id id anim enim veniam ullamco irure velit ut cillum.</p>
-                        <p>Lorem ipsum Magna aliqua id fugiat Duis veniam sit ad ut incididunt labore magna labore eu in dolor fugiat sunt deserunt sint eiusmod magna veniam. Lorem ipsum Ad enim occaecat minim occaecat.</p>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="service-item-icon hidden-xs text-center">
-                            <i class="fa fa-15x fa-microphone"></i>
+                        <div class="form-group">
+                            <label for="InputMessage">Mesagge</label>
+                            <textarea class="form-control" id="InputMessage" rows="8"></textarea>
                         </div>
-                    </div>
-                </section> <!-- service-item -->
-            </div> <!-- row -->
-            <div class="row">
-                <section class="service-item">
-                    <div class="col-md-6 col-md-push-6">
-                        <h2>Consectetur adipisicing elit</h2>
-                        <p>Lorem ipsum Dolor id ut dolor cupidatat in aliqua ad laborum commodo aliquip in ut aliqua pariatur ea sit pariatur veniam do. Lorem ipsum In quis ut qui ea sed id id anim enim veniam ullamco irure velit ut cillum.</p>
-                        <p>Lorem ipsum Magna aliqua id fugiat Duis veniam sit ad ut incididunt labore magna labore eu in dolor fugiat sunt deserunt sint eiusmod magna veniam. Lorem ipsum Ad enim occaecat minim occaecat.</p>
-                    </div>
-                    <div class="col-md-6 col-md-pull-6">
-                        <div class="service-item-icon hidden-xs text-center">
-                            <i class="fa fa-15x fa-comments-o"></i>
+                        <button type="submit" class="btn btn-primary pull-right">Submit</button>
+                        <div class="clearfix"></div>
+                    </form>
+                </section>
+            </div>
+
+            <div class="col-md-4">
+                <section>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading"><i class="fa fa-envelope-o"></i> Additional Information</div>
+                        <div class="panel-body">
+                                <h4 class="section-title">Contacts</h4>
+                                <address>
+                                    <strong>Open Mind, Inc.</strong><br>
+                                    795 Folsom Ave, Suite 600<br>
+                                    San Francisco, CA 94107<br>
+                                    <abbr title="Phone">P:</abbr> (123) 456-7890 <br>
+                                    Mail: <a href="#">support@openmid.com</a>
+                                </address>
+
+                                <!-- Business Hours -->
+                                <h4 class="section-title">Business Hours</h4>
+                                <ul class="list-unstyled">
+                                    <li><strong>Monday-Friday:</strong> 9am to 7pm</li>
+                                    <li><strong>Saturday:</strong> 9am to 2pm</li>
+                                    <li><strong>Sunday:</strong> Closed</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                </section> <!-- service-item -->
-            </div> <!-- row -->
+                </section>
+            </div>
+        </div>
+        <section>
+            <div class="well well-sm">
+                <iframe width="100%" height="350" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=central%2Bpark&amp;ie=UTF8&amp;z=12&amp;t=m&amp;iwloc=near&amp;output=embed"></iframe>
+            </div>
         </section>
     </div> <!-- container -->
 
@@ -320,21 +312,21 @@
                         <div class="footer-widget">
                             <h3 class="footer-widget-title">Recent Post</h3>
                             <div class="media">
-                                <a class="pull-left" href="#"><img class="media-object" src="img/m2.jpg" width="75" height="75" alt="image"></a>
+                                <a class="pull-left" href="#"><img class="media-object" src="../static/hello/img/m2.jpg" width="75" height="75" alt="image"></a>
                                 <div class="media-body">
                                     <h4 class="media-heading"><a href="#">Lorem ipsum Duis quis occaecat minim lorem ipsum tempor officia labor</a></h4>
                                     <small>August 18, 2013</small>
                                 </div>
                             </div>
                             <div class="media">
-                                <a class="pull-left" href="#"><img class="media-object" src="img/m11.jpg" width="75" height="75" alt="image"></a>
+                                <a class="pull-left" href="#"><img class="media-object" src="../static/hello/img/m11.jpg" width="75" height="75" alt="image"></a>
                                 <div class="media-body">
                                     <h4 class="media-heading"><a href="#">Lorem ipsum dolor excepteur sunt in lorem ipsum cillum tempor</a></h4>
                                     <small>September 14, 2013</small>
                                 </div>
                             </div>
                             <div class="media">
-                                <a class="pull-left" href="#"><img class="media-object" src="img/m4.jpg" width="75" height="75" alt="image"></a>
+                                <a class="pull-left" href="#"><img class="media-object" src="../static/hello/img/m4.jpg" width="75" height="75" alt="image"></a>
                                 <div class="media-body">
                                     <h4 class="media-heading"><a href="#">Lorem ipsum Dolor cupidatat adipisicing et fugiat</a></h4>
                                     <small>October 9, 2013</small>
@@ -346,17 +338,17 @@
                         <div class="footer-widget">
                             <h3 class="footer-widget-title">Recent Works</h3>
                             <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-3">
-                                    <a href="#" class="thumbnail"><img src="js/holder.js/100%x120/social" class="img-responsive" alt="Image"></a>
+                                <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6">
+                                    <a href="#" class="thumbnail"><img src="../static/hello/img/wf1.jpg" class="img-responsive" alt="Image"></a>
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-sm-3">
-                                    <a href="#" class="thumbnail"><img src="js/holder.js/100%x120/social" class="img-responsive" alt="Image"></a>
+                                <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6">
+                                    <a href="#" class="thumbnail"><img src="../static/hello/img/wf2.jpg" class="img-responsive" alt="Image"></a>
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-sm-3">
-                                    <a href="#" class="thumbnail"><img src="js/holder.js/100%x120/social" class="img-responsive" alt="Image"></a>
+                                <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6">
+                                    <a href="#" class="thumbnail"><img src="../static/hello/img/wf3.jpg" class="img-responsive" alt="Image"></a>
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-sm-3">
-                                    <a href="#" class="thumbnail"><img src="js/holder.js/100%x120/social" class="img-responsive" alt="Image"></a>
+                                <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6">
+                                    <a href="#" class="thumbnail"><img src="../static/hello/img/wf4.jpg" class="img-responsive" alt="Image"></a>
                                 </div>
                             </div>
                         </div>
@@ -371,23 +363,24 @@
 
     </div> <!-- boxed -->
 
+
     <div id="back-top">
         <a href="#header"><i class="fa fa-chevron-up"></i></a>
     </div>
 
     <!-- Scripts -->
-    <script src="js/jquery-1.10.2.min.js"></script>
-    <script src="js/jquery.cookie.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.mixitup.min.js"></script>
-    <script src="js/lightbox-2.6.min.js"></script>
-    <script src="js/holder.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/styleswitcher.js"></script>
+    <script src="../static/hello/js/jquery-1.10.2.min.js"></script>
+    <script src="../static/hello/js/jquery.cookie.js"></script>
+    <script src="../static/hello/js/bootstrap.min.js"></script>
+    <script src="../static/hello/js/jquery.mixitup.min.js"></script>
+    <script src="../static/hello/js/lightbox-2.6.min.js"></script>
+    <script src="../static/hello/js/holder.js"></script>
+    <script src="../static/hello/js/app.js"></script>
+    <script src="../static/hello/js/styleswitcher.js"></script>
 
-    <script src="js/syntax/shCore.js"></script>
-    <script src="js/syntax/shBrushXml.js"></script>
-    <script src="js/syntax/shBrushJScript.js"></script>
+    <script src="../static/hello/js/syntax/shCore.js"></script>
+    <script src="../static/hello/js/syntax/shBrushXml.js"></script>
+    <script src="../static/hello/js/syntax/shBrushJScript.js"></script>
 
     <script type="text/javascript">
         SyntaxHighlighter.all()

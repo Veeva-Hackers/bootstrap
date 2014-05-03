@@ -8,22 +8,22 @@
     <title>Open Mind</title>
 
     <!-- CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="css/font-awesome.min.css" rel="stylesheet" media="screen">
-    <link href="css/animate.min.css" rel="stylesheet" media="screen">
-    <link href="css/lightbox.css" rel="stylesheet" media="screen">
-    <link href="css/syntax/shCore.css" rel="stylesheet"  media="screen">
-    <link href="css/syntax/shThemeDefault.css" rel="stylesheet"  media="screen">
+    <link href="../static/hello/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="../static/hello/css/font-awesome.min.css" rel="stylesheet" media="screen">
+    <link href="../static/hello/css/animate.min.css" rel="stylesheet" media="screen">
+    <link href="../static/hello/css/lightbox.css" rel="stylesheet" media="screen">
+    <link href="../static/hello/css/syntax/shCore.css" rel="stylesheet"  media="screen">
+    <link href="../static/hello/css/syntax/shThemeDefault.css" rel="stylesheet"  media="screen">
 
     
-    <link href="css/style.css" rel="stylesheet" media="screen" title="default">
-    <link href="css/color-default.css" rel="stylesheet" media="screen" title="default">
-    <link href="css/width-full.css" rel="stylesheet" media="screen" title="default">
+    <link href="../static/hello/css/style.css" rel="stylesheet" media="screen" title="default">
+    <link href="../static/hello/css/color-default.css" rel="stylesheet" media="screen" title="default">
+    <link href="../static/hello/css/width-full.css" rel="stylesheet" media="screen" title="default">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-        <script src="js/html5shiv.js"></script>
-        <script src="js/respond.min.js"></script>
+    <script src="../../static/hello/js/html5shiv.js"></script>
+    <script src="../../static/hello/js/respond.min.js"></script>
     <![endif]-->
 </head>
 
@@ -114,16 +114,16 @@
                             </ul>
                         </li> <!-- dropdown -->
 
-                        <li class="dropdown active">
+                        <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">UI Elements <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="css.html">CSS</a></li>
                                 <li><a href="components.html">Components</a></li>
                                 <li><a href="additional_components.html">Additional Components</a></li>
-                                <li class="active"><a href="layout.html">Layout</a></li>
+                                <li><a href="layout.html">Layout</a></li>
                             </ul>
                         </li> <!-- dropdown -->
-                        <li class="dropdown">
+                        <li class="dropdown active">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="about.html">About us</a></li>
@@ -139,7 +139,7 @@
                                 <li><a href="contact.html">Contact</a></li>
                                 <li><a href="full.html">Full Page</a></li>
                                 <li class="dropdown-header">User Pages</li>
-                                <li><a href="register.html">Register</a></li>
+                                <li class="active"><a href="register.html">Register</a></li>
                                 <li><a href="login.html">Login</a></li>
                                 <li><a href="profile.html">Profile</a></li>
                             </ul>
@@ -195,7 +195,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">User name</a>
                             <div class="dropdown-menu dropdown-profile animated fadeInUp">
-                                <img src="img/avatar.jpg" class="imageborder alignleft" alt="image"> 
+                                <img src="../static/hello/img/avatar.jpg" class="imageborder alignleft" alt="image">
                                 <h4>Administrator</h4>
                                 admin@openmind.com<br>
                                 <a href="profile.html">Profile</a> | <a href="#">Logout</a>
@@ -209,95 +209,105 @@
 
         <header class="wrap-title">
             <div class="container">
-                <h1 class="page-title">Layout Page</h1>
+                <h1 class="page-title">Register Page</h1>
 
                 <ol class="breadcrumb hidden-xs">
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">UI Elements</a></li>
-                    <li class="active">Layout Page</li>
+                    <li><a href="#">Pages</a></li>
+                    <li class="active">Login</li>
                 </ol>
             </div>
         </header>
-
+          
         <div class="container">
             <div class="row">
-                <div class="col-sm-9">
-                    <h3>Three Fourth</h3>
-                    <p>Lorem ipsum Cupidatat ex ea sunt et esse fugiat amet voluptate officia aute Ut dolore eiusmod eiusmod eiusmod labore irure reprehenderit aliqua in elit non Excepteur laborum in ut consequat laboris laborum non velit est fugiat cillum in quis reprehenderit excepteur laborum in ut consequat laboris laborum non velit est fugiat cillum in quis reprehenderit dolore eiusmod eiusmod eiusmod labore irure reprehenderit.</p>
+                <div class="col-md-7">
+                    <h2 class="section-title">Create Account</h2>
+                    <div class="panel panel-primary animated fadeInDown">
+                        <div class="panel-heading">Register Form</div>
+                        <div class="panel-body">
+                            <form role="form">
+                                <div class="form-group">
+                                    <label for="InputUserName">User Name<sup>*</sup></label>
+                                    <input type="text" class="form-control" id="InputUserName">
+                                </div>
+                                <div class="form-group">
+                                    <label for="InputFirstName">First Name</label>
+                                    <input type="text" class="form-control" id="InputFirstName">
+                                </div>
+                                <div class="form-group">
+                                    <label for="InputLastName">Last Name</label>
+                                    <input type="text" class="form-control" id="InputLastName">
+                                </div>
+                                <div class="form-group">
+                                    <label for="InputEmail">Email<sup>*</sup></label>
+                                    <input type="email" class="form-control" id="InputEmail">
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="InputPassword">Password<sup>*</sup></label>
+                                            <input type="password" class="form-control" id="InputPassword">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="InputConfirmPassword">Confirm Password<sup>*</sup></label>
+                                            <input type="password" class="form-control" id="InputConfirmPassword">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> I read <a href="#">Terms and Conditions</a>.
+                                        </label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button type="submit" class="btn btn-primary pull-right">Register</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-sm-3">
-                    <h3>One Fourth</h3>
-                    <p>Lorem ipsum Cupidatat ex ea sunt et esse fugiat amet voluptate officia aute Ut dolore eiusmod eiusmod eiusmod labore irure reprehenderit aliqua.</p>
+                <div class="col-lg-4 col-lg-offset-1 col-md-5">
+                    <h2 class="section-title">Are you registered?</h2>
+                    <div class="panel panel-success animated fadeInDown animation-delay-2">
+                        <div class="panel-heading">Login Form</div>
+                        <div class="panel-body">
+                            <form role="form">
+                                <div class="form-group">
+                                    <div class="input-group login-input">
+                                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                        <input type="text" class="form-control" placeholder="Username">
+                                    </div>
+                                    <br>
+                                    <div class="input-group login-input">
+                                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                        <input type="password" class="form-control" placeholder="Password">
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> Remember me
+                                        </label>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary pull-right">Login</button>
+                                    <a href="#" class="social-icon soc-twitter animated fadeInDown animation-delay-3"><i class="fa fa-twitter"></i></a>
+                                    <a href="#" class="social-icon soc-google-plus animated fadeInDown animation-delay-4"><i class="fa fa-google-plus"></i></a>
+                                    <a href="#" class="social-icon soc-facebook animated fadeInDown animation-delay-5"><i class="fa fa-facebook"></i></a>
+                                    <hr>
+                                    <a href="#" class="btn btn-success pull-right">Create Account</a>
+                                    <a href="#" class="btn btn-warning">Password Recovery</a>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    <h3>One Third</h3>
-                    <p>Lorem ipsum Cupidatat ex ea sunt et esse fugiat amet voluptate officia aute Ut dolore eiusmod eiusmod eiusmod labore irure reprehenderit aliqua in elit non Excepteur laborum in ut consequat.</p>
-                </div>
-                <div class="col-sm-8">
-                    <h3>Two Third</h3>
-                    <p>Lorem ipsum Cupidatat ex ea sunt et esse fugiat amet voluptate officia aute Ut dolore eiusmod eiusmod eiusmod labore irure reprehenderit aliqua Ut dolore eiusmod eiusmod eiusmod labore irure reprehenderit aliqua in elit non Excepteur laborum in ut consequat laboris laborum non velit est fugiat cillum in quis reprehenderit sunt et esse fugiat amet voluptate officia aute Ut dolore eiusmod.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    <h3>One Third</h3>
-                    <p>Lorem ipsum Cupidatat ex ea sunt et esse fugiat amet voluptate officia aute Ut dolore eiusmod eiusmod eiusmod labore irure reprehenderit aliqua in elit non Excepteur laborum in ut consequat.</p>
-                </div>
-                <div class="col-sm-4">
-                    <h3>One Third</h3>
-                    <p>Lorem ipsum Cupidatat ex ea sunt et esse fugiat amet voluptate officia aute Ut dolore eiusmod eiusmod eiusmod labore irure reprehenderit aliqua in elit non Excepteur laborum in ut consequat.</p>
-                </div>
-                <div class="col-sm-4">
-                    <h3>One Third</h3>
-                    <p>Lorem ipsum Cupidatat ex ea sunt et esse fugiat amet voluptate officia aute Ut dolore eiusmod eiusmod eiusmod labore irure reprehenderit aliqua in elit non Excepteur laborum in ut consequat.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-3">
-                    <h3>One Fourth</h3>
-                    <p>Lorem ipsum Cupidatat ex ea sunt et esse fugiat amet voluptate officia aute Ut dolore fugiat amet voluptate officia.</p>
-                </div>
-                <div class="col-sm-6">
-                    <h3>One Half</h3>
-                    <p>Lorem ipsum Cupidatat ex ea sunt et esse fugiat amet voluptate officia aute Ut dolore eiusmod eiusmod eiusmod labore irure reprehenderit aliqua in elit non Excepteur laborum in ut consequat ipsum Cupidatat ex ea sunt et esse fugiat amet voluptate officia aute Ut dolore.</p>
-                </div>
-                <div class="col-sm-3">
-                    <h3>One Fourth</h3>
-                    <p>Lorem ipsum Cupidatat ex ea sunt et esse fugiat amet voluptate officia aute Ut dolore fugiat amet voluptate officia.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    <h3>One Half</h3>
-                    <p>Lorem ipsum Cupidatat ex ea sunt et esse fugiat amet voluptate officia aute Ut dolore eiusmod eiusmod eiusmod labore irure reprehenderit aliqua in elit non Excepteur laborum in ut consequat ipsum Cupidatat ex ea sunt et esse fugiat amet voluptate officia aute Ut dolore.</p>
-                </div>
-                <div class="col-sm-6">
-                    <h3>One Half</h3>
-                    <p>Lorem ipsum Cupidatat ex ea sunt et esse fugiat amet voluptate officia aute Ut dolore eiusmod eiusmod eiusmod labore irure reprehenderit aliqua in elit non Excepteur laborum in ut consequat ipsum Cupidatat ex ea sunt et esse fugiat amet voluptate officia aute Ut dolore.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-3">
-                    <h3>One Fourth</h3>
-                    <p>Lorem ipsum Cupidatat ex ea sunt et esse fugiat amet voluptate officia aute Ut dolore fugiat amet voluptate officia.</p>
-                </div>
-                <div class="col-sm-3">
-                    <h3>One Fourth</h3>
-                    <p>Lorem ipsum Cupidatat ex ea sunt et esse fugiat amet voluptate officia aute Ut dolore fugiat amet voluptate officia.</p>
-                </div>
-                <div class="col-sm-3">
-                    <h3>One Fourth</h3>
-                    <p>Lorem ipsum Cupidatat ex ea sunt et esse fugiat amet voluptate officia aute Ut dolore fugiat amet voluptate officia.</p>
-                </div>
-                <div class="col-sm-3">
-                    <h3>One Fourth</h3>
-                    <p>Lorem ipsum Cupidatat ex ea sunt et esse fugiat amet voluptate officia aute Ut dolore fugiat amet voluptate officia.</p>
-                </div>
-            </div>
-        </div> <!-- container -->
-        
+        </div> <!-- container  -->
+
         <aside id="footer-widgets">
             <div class="container">
                 <div class="row">
@@ -330,21 +340,21 @@
                         <div class="footer-widget">
                             <h3 class="footer-widget-title">Recent Post</h3>
                             <div class="media">
-                                <a class="pull-left" href="#"><img class="media-object" src="img/m2.jpg" width="75" height="75" alt="image"></a>
+                                <a class="pull-left" href="#"><img class="media-object" src="../static/hello/img/m2.jpg" width="75" height="75" alt="image"></a>
                                 <div class="media-body">
                                     <h4 class="media-heading"><a href="#">Lorem ipsum Duis quis occaecat minim lorem ipsum tempor officia labor</a></h4>
                                     <small>August 18, 2013</small>
                                 </div>
                             </div>
                             <div class="media">
-                                <a class="pull-left" href="#"><img class="media-object" src="img/m11.jpg" width="75" height="75" alt="image"></a>
+                                <a class="pull-left" href="#"><img class="media-object" src="../static/hello/img/m11.jpg" width="75" height="75" alt="image"></a>
                                 <div class="media-body">
                                     <h4 class="media-heading"><a href="#">Lorem ipsum dolor excepteur sunt in lorem ipsum cillum tempor</a></h4>
                                     <small>September 14, 2013</small>
                                 </div>
                             </div>
                             <div class="media">
-                                <a class="pull-left" href="#"><img class="media-object" src="img/m4.jpg" width="75" height="75" alt="image"></a>
+                                <a class="pull-left" href="#"><img class="media-object" src="../static/hello/img/m4.jpg" width="75" height="75" alt="image"></a>
                                 <div class="media-body">
                                     <h4 class="media-heading"><a href="#">Lorem ipsum Dolor cupidatat adipisicing et fugiat</a></h4>
                                     <small>October 9, 2013</small>
@@ -357,16 +367,16 @@
                             <h3 class="footer-widget-title">Recent Works</h3>
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6">
-                                    <a href="#" class="thumbnail"><img src="img/wf1.jpg" class="img-responsive" alt="Image"></a>
+                                    <a href="#" class="thumbnail"><img src="../static/hello/img/wf1.jpg" class="img-responsive" alt="Image"></a>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6">
-                                    <a href="#" class="thumbnail"><img src="img/wf2.jpg" class="img-responsive" alt="Image"></a>
+                                    <a href="#" class="thumbnail"><img src="../static/hello/img/wf2.jpg" class="img-responsive" alt="Image"></a>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6">
-                                    <a href="#" class="thumbnail"><img src="img/wf3.jpg" class="img-responsive" alt="Image"></a>
+                                    <a href="#" class="thumbnail"><img src="../static/hello/img/wf3.jpg" class="img-responsive" alt="Image"></a>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6">
-                                    <a href="#" class="thumbnail"><img src="img/wf4.jpg" class="img-responsive" alt="Image"></a>
+                                    <a href="#" class="thumbnail"><img src="../static/hello/img/wf4.jpg" class="img-responsive" alt="Image"></a>
                                 </div>
                             </div>
                         </div>
@@ -387,18 +397,18 @@
     </div>
 
     <!-- Scripts -->
-    <script src="js/jquery-1.10.2.min.js"></script>
-    <script src="js/jquery.cookie.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.mixitup.min.js"></script>
-    <script src="js/lightbox-2.6.min.js"></script>
-    <script src="js/holder.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/styleswitcher.js"></script>
+    <script src="../static/hello/js/jquery-1.10.2.min.js"></script>
+    <script src="../static/hello/js/jquery.cookie.js"></script>
+    <script src="../static/hello/js/bootstrap.min.js"></script>
+    <script src="../static/hello/js/jquery.mixitup.min.js"></script>
+    <script src="../static/hello/js/lightbox-2.6.min.js"></script>
+    <script src="../static/hello/js/holder.js"></script>
+    <script src="../static/hello/js/app.js"></script>
+    <script src="../static/hello/js/styleswitcher.js"></script>
 
-    <script src="js/syntax/shCore.js"></script>
-    <script src="js/syntax/shBrushXml.js"></script>
-    <script src="js/syntax/shBrushJScript.js"></script>
+    <script src="../static/hello/js/syntax/shCore.js"></script>
+    <script src="../static/hello/js/syntax/shBrushXml.js"></script>
+    <script src="../static/hello/js/syntax/shBrushJScript.js"></script>
 
     <script type="text/javascript">
         SyntaxHighlighter.all()
