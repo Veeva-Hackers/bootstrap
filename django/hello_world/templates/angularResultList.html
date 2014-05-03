@@ -1,26 +1,47 @@
 {% verbatim %}
-<ul class="list-group">
-    <li ng-repeat="restaurant in restaurants" class="list-group-item">
-        <div class="vv_result_tile">
-            <div class="vv_left_column">
-                <div class="vv_restaurant_name">{{restaurant.name}}</div>
-                <div class="vv_restaurant_yelp_rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-half-o"></i>
+<div class="container">
+    <div class="vv_sort_container portfolio-control">
+        Sort By:
+        <select ng-model="orderProp">
+            <option value="name">Alphabetical A-Z</option>
+            <option value="-name">Alphabetical Z-A</option>
+            <option value="yelpRating">Yelp Rating</option>
+            <option value="inspectionRating">Average Inspection Rating</option>
+        </select>
+    </div>
+   <!--<ul class="portfolio-control">-->
+
+    <!--<li class="filter active" data-filter="all">All Items</li>-->
+    <!--<li class="filter" data-filter="1">Web Design</li>-->
+    <!--<li class="filter" data-filter="2">IOS App</li>-->
+    <!--<li class="filter" data-filter="3">Android App</li>-->
+    <!--<li class="filter" data-filter="4">Windows App</li>-->
+    <!--</ul>-->
+
+    <ul class="list-group">
+        <li ng-repeat="restaurant in restaurants" class="list-group-item">
+            <div class="vv_result_tile">
+                <div class="vv_left_column">
+                    <div class="vv_restaurant_name">{{restaurant.name}}</div>
+                    <div class="vv_restaurant_yelp_rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div>
+                    <div class="vv_restaurant_location">123 Fake St</div>
                 </div>
-                <div class="vv_restaurant_location">123 Fake St</div>
+                <div class="vv_right_column">
+                    <div class="vv_restaurant_Rating_good">
+                        <i class="fa fa-circle"></i>
+                    </div>
+                    <div class="vv_restaurant_cost">
+                        <i class="fa fa-usd"></i>
+                    </div>
+                </div>
             </div>
-            <div class="vv_right_column">
-                <div class="vv_restaurant_Rating_good">
-                    <i class="fa fa-circle"></i>
-                </div>
-                <div class="vv_restaurant_cost">
-                    <i class="fa fa-usd"></i>
-                </div>
-            </div>
-        </div>
-    </li>
-</ul>
+        </li>
+    </ul>
+</div> <!-- container  -->
+
 {% endverbatim %}
