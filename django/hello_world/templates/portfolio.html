@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="helloApp" lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -24,11 +24,13 @@
     <!--[if lt IE 9]>
     <script src="../../static/hello/js/html5shiv.js"></script>
     <script src="../../static/hello/js/respond.min.js"></script>
+    <script src="../../static/vendor/angular/angular.js"></script>
+    <script src="../../static/hello/js/controllers.js"></script>
     <![endif]-->
 </head>
 
 
-<body>
+<body ng-controller="resultListCtrl">
     <div class="boxed animated fadeIn animation-delay-5">
 
         <header id="header" class="hidden-xs">
@@ -43,7 +45,7 @@
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
-                    <a class="navbar-brand visible-xs" href="index.html">Open <span>Mind</span></a>
+                    <a class="navbar-brand visible-xs" href="index.html">Alameda<span>Food Safety</span></a>
 
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-mind-collapse">
                         <span class="sr-only">Toggle navigation</span>
@@ -98,6 +100,28 @@
            <!--</ul>-->
 
            <ul class="list-group">
+                <li ng-repeat="restaurant in restaurants" class="list-group-item">
+                    <div class="vv_result_tile">
+                        <div class="vv_left_column">
+                            <div class="vv_restaurant_name">{{restaurant.name}}</div>
+                            <div class="vv_restaurant_yelp_rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                            </div>
+                            <div class="vv_restaurant_location">123 Fake St</div>
+                        </div>
+                        <div class="vv_right_column">
+                            <div class="vv_restaurant_Rating_good">
+                                <i class="fa fa-circle"></i>
+                            </div>
+                            <div class="vv_restaurant_cost">
+                                <i class="fa fa-usd"></i>
+                            </div>
+                        </div>
+                    </div>
+                </li>
                 <li class="list-group-item">
                     <div class="vv_result_tile">
                         <div class="vv_left_column">

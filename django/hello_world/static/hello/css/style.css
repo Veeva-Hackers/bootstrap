@@ -28,7 +28,7 @@ START CUSTOM STYLING
 .vv_restaurant_Rating_bad {
     color: red;
 }
-..vv_restaurant_yelp_rating {
+.vv_restaurant_yelp_rating {
     color: yellow;
 }
 .list-group-item .vv_result_tile .vv_restaurant_name {
@@ -1343,7 +1343,6 @@ a.social-icon:hover {
     word-spacing: -6px;
     font-family: 'Abel', sans-serif;
     font-size: 2.4em;
-    margin-right: 20px
 }
 
 .navbar-mind .navbar-brand span {
