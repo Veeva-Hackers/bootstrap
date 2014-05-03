@@ -23,12 +23,10 @@ class Restaurant(models.Model):
     latitude = models.DecimalField(max_digits=11, decimal_places=8)
     location_1 = models.OneToOneField(Address, null=True)
 
-def parse_from_flat_file():
+def load():
     restaurant_json_path = os.path.join(settings.BASE_DIR, 'static/restaurantinspect.json')
     restaurant_json_array = json.loads(open(restaurant_json_path).read())
 
-    addresses = []
-    restaurants = []
     for restaurantJson in restaurant_json_array:
         restaurant = Restaurant()
         restaurant.facility_name = restaurantJson['facility_name']
@@ -48,7 +46,7 @@ def parse_from_flat_file():
             address.city = address_json['city']
             address.state = address_json['state']
             address.zip = address_json['zip']
-            addresses.append(address)
+            address.save()
 
             restaurant.location_1 = address
 
@@ -60,14 +58,4 @@ def parse_from_flat_file():
         if 'violation_description' in restaurantJson:
             restaurant.violation_description = restaurantJson['violation_description']
 
-        restaurants.append(restaurant)
-    return restaurants, addresses
-
-def load():
-    restaurants, addresses = parse_from_flat_file()
-
-    for address in addresses:
-        address.save()
-
-    for restaurant in restaurants:
         restaurant.save()
