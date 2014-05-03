@@ -12,7 +12,6 @@ class Address(models.Model):
     zip = models.CharField(max_length=10)
 
 class Restaurant(models.Model):
-    resource_code = models.CharField(max_length=100)
     human_address = models.CharField(max_length=300)
     facility_name = models.CharField(max_length=300, primary_key=True)
     longitude = models.DecimalField(max_digits=11, decimal_places=8)
@@ -21,6 +20,7 @@ class Restaurant(models.Model):
 
 class Violation(models.Model):
     restaurant = models.ForeignKey(Restaurant)
+    resource_code = models.CharField(max_length=100)
     activity_date = models.DateTimeField()
     violation_description = models.CharField(max_length=1000)
 
@@ -31,8 +31,6 @@ def load():
     for restaurantJson in restaurant_json_array:
         restaurant = Restaurant()
         restaurant.facility_name = restaurantJson['facility_name']
-        if 'resource_code' in restaurantJson:
-            restaurant.resource_code = restaurantJson['resource_code']
 
         if 'location_1' in restaurantJson:
             location_json = restaurantJson['location_1']
@@ -61,6 +59,8 @@ def load():
             violation.activity_date = datetime.now()
         if 'violation_description' in restaurantJson:
             violation.violation_description = restaurantJson['violation_description']
+        if 'resource_code' in restaurantJson:
+            violation.resource_code = restaurantJson['resource_code']
 
         violation.restaurant = restaurant
         violation.save()
