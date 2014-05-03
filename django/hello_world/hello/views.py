@@ -74,7 +74,7 @@ class RestaurantSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Restaurant
-        fields = ('facility_name', 'human_address', 'violations', 'location_1')
+        fields = ('id', 'facility_name', 'human_address', 'violations', 'location_1')
 
 class ViolationViewSet(viewsets.ModelViewSet):
     model = Violation
