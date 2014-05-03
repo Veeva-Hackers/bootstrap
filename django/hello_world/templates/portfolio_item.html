@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="helloApp">
 
 <head>
     <meta charset="UTF-8">
@@ -22,8 +22,10 @@
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-    <script src="../../static/hello/js/html5shiv.js"></script>
-    <script src="../../static/hello/js/respond.min.js"></script>
+    <script src="../static/hello/js/html5shiv.js"></script>
+    <script src="../static/hello/js/respond.min.js"></script>
+    <script src="../static/vendor/angular/angular.min.js"></script>
+    <script src="../static/hello/js/controller.js"></script>
     <![endif]-->
 </head>
 
@@ -66,91 +68,7 @@
         </div>
     </nav>
 
-    <div class="boxed animated fadeIn animation-delay-5">
-          
-        <div class="container">
-            <div class="row" style="margin-top:1em">
-                <div class="col-md-6">
-                    <h3 class="section-title">Chipotle</h3>
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <div class="vv_result_tile_small">
-                                <div class="vv_left_column">Rating</div>
-                                <div class="vv_right_column">***</div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="vv_result_tile_small">
-                                <div class="vv_left_column">Cost</div>
-                                <div class="vv_right_column">$$$</div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="vv_result_tile_small">
-                                <div class="vv_left_column">Link to yelp:</div>
-                                <a href="#" class="vv_right_column">Yelp Link</a>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="vv_result_tile_small">
-                                <div class="vv_left_column">Address</div>
-                                <div class="vv_right_column">1111 one way</div>
-                            </div>
-                        </li>
-                    </ul> <!--list-group -->
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="panel-group" id="accordion" style="margin-bottom:1em">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="collapsed">
-                                        Violations
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseOne" class="panel-collapse collapse">
-                                <table class="panel-body" style="width:100%">
-                                    <thead>
-                                        <tr>
-                                            <th>Violation</th>
-                                            <th>Date</th>
-                                            <th>Rating</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody style="border:solid 1px #00708c ">
-                                        <tr>
-                                            <td>Clean Kitchen</td>
-                                            <td>Jan 1 2000</td>
-                                            <td>
-                                                <div class="vv_restaurant_Rating_good">
-                                                    <i class="fa fa-circle"></i>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Sufficient Supplies</td>
-                                            <td>Jan 1 2000</td>
-                                            <td>
-                                                <div class="vv_restaurant_Rating_good">
-                                                    <i class="fa fa-circle"></i>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <a href="../static/hello/img/w2.jpg" class="thumbnail margin-bottom-20" data-lightbox="w1" title="My cassption">
-                        <img src="../static/hello/img/w2.jpg" class="img-responsive" alt="Image">
-                    </a>
-                </div>
-            </div>
-        </div> <!-- container  -->
-
-    </div> <!-- boxed -->
+    {% include "angularDetails.html" %}
 
 
     <div id="back-top">
