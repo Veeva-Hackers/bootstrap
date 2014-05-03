@@ -1,10 +1,11 @@
 from django.shortcuts import render_to_response
 from django.http import HttpResponse
 from yelpapi.yelpapi import YelpAPI
-import json
+from rest_framework import viewsets, serializers
+from rest_framework.renderers import JSONRenderer
 
 from hello import models
-
+from hello.models import Violation, Restaurant
 
 def home(request):
     return render_to_response('index.html', {
@@ -29,10 +30,30 @@ def search_yelp(request):
     })
 
 def search_restaurant_name(request):
-    matching_restaurants = models.Restaurant.objects.all()
-    output = json.dumps(matching_restaurants)
-    return HttpResponse(output)
+    matching_restaurants = [models.Restaurant.objects.all()[0]]
+
+    serializer = RestaurantSerializer(matching_restaurants)
+    return HttpResponse(JSONRenderer().render(serializer.data))
 
 def initialize_db(request):
     models.load()
     return HttpResponse("Initialized")
+
+class ViolationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Violation
+        fields = ('resource_code', 'activity_date', 'violation_description')
+
+class RestaurantSerializer(serializers.HyperlinkedModelSerializer):
+    violations = ViolationSerializer(many=True)
+
+    class Meta:
+        model = Restaurant
+        fields = ('facility_name', 'violations')
+
+class ViolationViewSet(viewsets.ModelViewSet):
+    model = Violation
+
+class RestaurantViewSet(viewsets.ModelViewSet):
+    model = Restaurant
+    serializer_class = RestaurantSerializer
