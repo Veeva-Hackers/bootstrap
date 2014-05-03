@@ -78,15 +78,24 @@
                 </div>
             </div>
         </header>
-          
+
         <div class="container">
-           <ul class="portfolio-control">
-               <li class="filter active" data-filter="all">All Items</li>
-               <li class="filter" data-filter="1">Web Design</li>
-               <li class="filter" data-filter="2">IOS App</li>
-               <li class="filter" data-filter="3">Android App</li>
-               <li class="filter" data-filter="4">Windows App</li>
-           </ul>
+            <div class="vv_sort_container portfolio-control">
+                Sort By:
+                <select ng-model="orderProp">
+                    <option value="name">Alphabetical A-Z
+                    <option value="-name">Alphabetical A-Z</option>
+                    <option value="yelpRating">Yelp Rating</option>
+                    <option value="inspectionRating">Average Inspection Rating</option>
+                </select>
+            </div>
+           <!--<ul class="portfolio-control">-->
+               <!--<li class="filter active" data-filter="all">All Items</li>-->
+               <!--<li class="filter" data-filter="1">Web Design</li>-->
+               <!--<li class="filter" data-filter="2">IOS App</li>-->
+               <!--<li class="filter" data-filter="3">Android App</li>-->
+               <!--<li class="filter" data-filter="4">Windows App</li>-->
+           <!--</ul>-->
 
            <ul class="list-group">
                 <li class="list-group-item">

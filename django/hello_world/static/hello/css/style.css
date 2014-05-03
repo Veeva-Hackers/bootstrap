@@ -16,16 +16,16 @@ START CUSTOM STYLING
 .list-group-item .vv_result_tile{
     min-height: 60px;
 }
-.list-group-item .vv_result_tile .vv_restaurant_Rating_good {
+.vv_restaurant_Rating_good {
     color: green;
 }
-.list-group-item .vv_result_tile .vv_restaurant_Rating_okay {
+.vv_restaurant_Rating_okay {
     color: yellow;
 }
-.list-group-item .vv_result_tile .vv_restaurant_Rating_bad {
+.vv_restaurant_Rating_bad {
     color: red;
 }
-.list-group-item .vv_result_tile .vv_restaurant_yelp_rating {
+..vv_restaurant_yelp_rating {
     color: yellow;
 }
 .list-group-item .vv_result_tile .vv_restaurant_name {
