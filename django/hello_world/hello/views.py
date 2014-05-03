@@ -19,8 +19,10 @@ def search_yelp(request):
                        token='jv8hIDODrf8kHAIalsFdgaJKSvo86E0U',
                        token_secret='_zQuQVlWTn_tzfnw_uhAWbQJJIs')
 
-    # search_results = yelp_api.search_query(radius_filter='5', term='restaurants', limit=25)
-    #
+
+
+    search_results = yelp_api.search_query(radius_filter='5', term='restaurants', limit=25)
+
     # for business in search_results.businesses:
     #     name = business.name
     #     image_url = business.image_url
@@ -29,7 +31,7 @@ def search_yelp(request):
     #     print 'name: ', name
 
     return render_to_response('portfolio.html', {
-        # 'results': search_results
+        'results': search_results
     })
 
 
