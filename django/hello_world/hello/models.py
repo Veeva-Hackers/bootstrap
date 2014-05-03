@@ -66,5 +66,8 @@ def parse_from_flat_file():
 def load():
     restaurants, addresses = parse_from_flat_file()
 
+    for address in addresses:
+        address.save()
+
     for restaurant in restaurants:
         restaurant.save()
