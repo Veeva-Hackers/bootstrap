@@ -36,4 +36,9 @@ class django {
     package { 'postgresql':
         ensure => present,
     }
+
+    package { 'yelpapi':
+        ensure => installed,
+        provider => pip,
+    }
 }
