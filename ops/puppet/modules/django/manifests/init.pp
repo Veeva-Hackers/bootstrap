@@ -37,7 +37,7 @@ class django {
         ensure => present,
     }
 
-    package { 'yelpapi':
+    package { 'python-yelp-v2':
         ensure => installed,
         provider => pip,
     }
