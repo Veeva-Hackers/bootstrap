@@ -7,7 +7,7 @@ from rest_framework import viewsets, serializers
 from rest_framework.renderers import JSONRenderer
 
 from hello import models
-from hello.models import Violation, Restaurant
+from hello.models import Violation, Restaurant, Address
 
 def home(request):
     return render_to_response('index.html', {
@@ -59,6 +59,11 @@ def initialize_db(request):
     models.load()
     return HttpResponse("Initialized")
 
+class AddressSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Address
+        fields = ('address', 'city', 'state', 'zip')
+
 class ViolationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Violation
@@ -66,13 +71,17 @@ class ViolationSerializer(serializers.ModelSerializer):
 
 class RestaurantSerializer(serializers.HyperlinkedModelSerializer):
     violations = ViolationSerializer(many=True)
+    location_1 = AddressSerializer()
 
     class Meta:
         model = Restaurant
-        fields = ('facility_name', 'violations')
+        fields = ('facility_name', 'human_address', 'violations', 'location_1')
 
 class ViolationViewSet(viewsets.ModelViewSet):
     model = Violation
+
+class AddressViewSet(viewsets.ModelViewSet):
+    model = Address
 
 class RestaurantViewSet(viewsets.ModelViewSet):
     model = Restaurant
