@@ -2,7 +2,6 @@ from django.shortcuts import render, render_to_response
 from yelpapi.yelpapi import YelpAPI
 from hello import models
 from django.http import HttpResponse
-import yelp
 
 
 # Create your views here.
