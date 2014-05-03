@@ -16,7 +16,7 @@ class Restaurant(models.Model):
     activity_date = models.DateTimeField()
     resource_code = models.CharField(max_length=100)
     human_address = models.CharField(max_length=300)
-    facility_name = models.CharField(max_length=300)
+    facility_name = models.CharField(max_length=300, primary_key=True)
     violation_description = models.CharField(max_length=1000)
 
     longitude = models.DecimalField(max_digits=11, decimal_places=8)
